@@ -65,9 +65,10 @@
     }
 
     .sobre-mim {
-      background-image: url('https://via.placeholder.com/800x300/8B0000/FFFFFF?text=Sirlei+-+BelasConfArte');
-      background-size: cover;
-      background-position: center;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background-color: #660000;
       color: #FFD700;
       padding: 30px;
       border-radius: 10px;
@@ -75,20 +76,15 @@
       overflow: hidden;
     }
 
-    .sobre-mim::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0,0,0,0.3);
-      z-index: 1;
+    .sobre-mim img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #FFD700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .sobre-mim p {
-      z-index: 2;
-      position: relative;
       margin: 10px 0;
       font-size: 1.1em;
     }
@@ -165,10 +161,13 @@
   <div class="container">
     <!-- Sobre Mim -->
     <div class="section sobre-mim">
-      <h2>Sobre Mim</h2>
-      <p>Olá! Sou a Sirlei, criadora da <strong>BelasConfArte</strong>, uma marca que nasceu com propósito.</p>
-      <p>Cada peça é feita com carinho, dedicação e, acima de tudo, com a presença de Deus em cada detalhe.</p>
-      <p>Minha missão é transformar momentos simples em experiências inesquecíveis.</p>
+      <img src="sobre_mim.jpg" alt="Sirlei - BelasConfArte" />
+      <div>
+        <h2>Sobre Mim</h2>
+        <p>Olá! Sou a Sirlei, criadora da <strong>BelasConfArte</strong>, uma marca que nasceu com propósito.</p>
+        <p>Cada peça é feita com carinho, dedicação e, acima de tudo, com a presença de Deus em cada detalhe.</p>
+        <p>Minha missão é transformar momentos simples em experiências inesquecíveis.</p>
+      </div>
     </div>
 
     <!-- Deus no Centro -->
