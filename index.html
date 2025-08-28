@@ -1,73 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>BelasConfArte</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BelasConfArte</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #fff8f0;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid #8B0000;
+    }
+
+    header h1 {
+      color: #8B0000;
+      margin: 0;
+      font-size: 2em;
+    }
+
+    nav {
+      text-align: center;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #8B0000;
+    }
+
+    nav a {
+      color: #8B0000;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #fff8f0;
+      border-left: 5px solid #8B0000;
+      border-top: 2px dashed #FFD700;
+      border-bottom: 2px dashed #FFD700;
+      border-radius: 8px;
+    }
+
+    .section h2 {
+      color: #8B0000;
+      margin-top: 0;
+      border-bottom: 1px dashed #FFD700;
+      padding-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .sobre-mim {
+      background-image: url('https://via.placeholder.com/800x300/8B0000/FFFFFF?text=Sirlei+-+BelasConfArte');
+      background-size: cover;
+      background-position: center;
+      color: #FFD700;
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sobre-mim::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .sobre-mim p {
+      z-index: 2;
+      position: relative;
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .categorias {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .categoria {
+      flex: 1 1 250px;
+      padding: 20px;
+      background-color: #fff8f0;
+      border: 2px solid #8B0000;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .categoria:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(139, 0, 0, 0.2);
+    }
+
+    .categoria h3 {
+      color: #8B0000;
+      margin-top: 0;
+      font-size: 1.3em;
+    }
+
+    .categoria p {
+      color: #660033;
+      margin: 10px 0;
+    }
+
+    .social {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 1.2em;
+    }
+
+    .social a {
+      color: #8B0000;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .social a:hover {
+      color: #FFD700;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #660033;
+      font-style: italic;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo BelasConfArte" width="200">
-        <nav>
-            <a href="/">Início</a> | 
-            <a href="/contato">Contato</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="sobre">
-               <h2 class="dourado">Sobre Mim</h2>
-            <p>Olá! Sou a Sirlei, criadora da <strong>BelasConfArte</strong>, uma marca que nasceu com propósito.</p>
-            <p>Cada peça é feita com carinho, dedicação e, acima de tudo, com a presença de Deus em cada detalhe.</p>
-<p>Minha missão é transformar momentos simples em experiências inesquecíveis.</p>
-</section>
+  <header>
+    <h1>BelasConfArte</h1>
+    <nav>
+      <a href="#">Início</a> | <a href="#">Contato</a>
+    </nav>
+  </header>
 
-
-
-
-        <section class="deus">
-            <h2>Deus no Centro</h2>
-            <p>Tudo o que faço é feito em nome de Deus. Acredito que Ele guia minhas mãos, meu coração e minha criatividade.</p>
-            <p>Como diz a Bíblia: <em>"O Senhor é o meu pastor; nada me faltará."</em> (Salmo 23:1)</p>
-            <p>Minha vida e meu trabalho são um testemunho de fé, amor e gratidão.</p>
-        </section>
-
-<section class="categorias">
-    <h2>Nossas categorias</h2>
-    <div class="box-categorias">
-        <a href="/bolos" class="categoria">
-            <h3>🎂 Bolos</h3>
-            <p>Deliciosos bolos artesanais para todas as ocasiões.</p>
-        </a>
-        <a href="/cestas" class="categoria">
-            <h3>🧺 Cestas e Festa na Bandeja</h3>
-            <p>Cestas decoradas e festas prontas para presentear.</p>
-        </a>
-        <a href="/kit-festa" class="categoria">
-            <h3>🎁 Kit Festa</h3>
-            <p>Tudo preparado para tornar sua comemoração ainda mais especial.</p>
-        </a>
-        <a href="/todos" class="categoria">
-            <h3>📦 Tudo o que temos</h3>
-            <p>Veja todos os nossos produtos em um só lugar.</p>
-        </a>
+  <div class="container">
+    <!-- Sobre Mim -->
+    <div class="section sobre-mim">
+      <h2>Sobre Mim</h2>
+      <p>Olá! Sou a Sirlei, criadora da <strong>BelasConfArte</strong>, uma marca que nasceu com propósito.</p>
+      <p>Cada peça é feita com carinho, dedicação e, acima de tudo, com a presença de Deus em cada detalhe.</p>
+      <p>Minha missão é transformar momentos simples em experiências inesquecíveis.</p>
     </div>
-</section>
 
-        <section class="contatos">
-            <h2>Conecte-se comigo</h2>
-            <p>Quer ver mais? Siga nas redes sociais:</p>
-            <ul>
-                <li><a href="https://instagram.com/BelasConfArte" target="_blank">📸 Instagram</a></li>
-                <li><a href="https://wa.me/5511999999999" target="_blank">💬 WhatsApp</a></li>
-                <li><a href="https://facebook.com/BelasConfArte" target="_blank">📘 Facebook</a></li>
-            </ul>
-        </section>
-    </main>
+    <!-- Deus no Centro -->
+    <div class="section">
+      <h2>Deus no Centro</h2>
+      <p>Tudo o que faço é feito em nome de Deus. Acredito que Ele guia minhas mãos, meu coração e minha criatividade.</p>
+      <p><em>"O Senhor é o meu pastor; nada me faltará."</em> – Salmo 23:1</p>
+      <p>Minha vida e meu trabalho são um testemunho de fé, amor e gratidão.</p>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 BelasConfArte. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Nossas Categorias -->
+    <div class="section">
+      <h2>Nossas Categorias</h2>
+      <div class="categorias">
+        <div class="categoria">
+          <h3>🎂 Bolos</h3>
+          <p>Deliciosos bolos artesanais para todas as ocasiões.</p>
+        </div>
+        <div class="categoria">
+          <h3>🛍️ Cestas e Festa na Bandeja</h3>
+          <p>Cestas decoradas e festas prontas para presentear.</p>
+        </div>
+        <div class="categoria">
+          <h3>🎁 Kit Festa</h3>
+          <p>Tudo preparado para tornar sua comemoração ainda mais especial.</p>
+        </div>
+        <div class="categoria">
+          <h3>📦 Tudo o que temos</h3>
+          <p>Veja todos os nossos produtos em um só lugar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conecte-se comigo -->
+    <div class="section">
+      <h2>Conecte-se comigo</h2>
+      <p>Quer ver mais? Siga nas redes sociais:</p>
+      <div class="social">
+        <a href="https://instagram.com/belasconfarte" target="_blank">Instagram</a> | 
+        <a href="https://wa.me/5511912345678" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BelasConfArte – Feito com amor e fé em Deus.</p>
+  </footer>
+
 </body>
 </html>
-
